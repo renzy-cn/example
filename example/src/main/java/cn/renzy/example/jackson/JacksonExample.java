@@ -2,6 +2,7 @@ package cn.renzy.example.jackson;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,6 +75,7 @@ public class JacksonExample {
 		User user = new User();
 		user.setId(1);
 		user.setUname("任志远");
+		user.setCreateDate(new Date());
 		List<User> relatives = new ArrayList<User>();
 		for(int i = 10 ; i < 20 ; i++){
 			User relative = new User();
@@ -84,6 +86,7 @@ public class JacksonExample {
 			List<User> r = new ArrayList<User>();
 			relative.setRelatives(r);
 			relatives.add(relative);
+			relative.setCreateDate(new Date());
 		}
 		user.setRelatives(relatives);
 		

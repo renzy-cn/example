@@ -1,7 +1,10 @@
 package cn.renzy.example.jackson.entity;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class User {
 
@@ -12,6 +15,9 @@ public class User {
 	private List<User> relatives;
 	
 	private Map<String, Object> hobby;
+	
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy.MM.dd")
+	private Date createDate;
 
 	public long getId() {
 		return id;
@@ -43,6 +49,14 @@ public class User {
 
 	public void setHobby(Map<String, Object> hobby) {
 		this.hobby = hobby;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 	
 }
